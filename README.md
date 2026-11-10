@@ -35,3 +35,10 @@ The implementation in this repository is newly authored for this portfolio and i
 
 ## License
 No license has been added yet. Add a license before redistributing this repository.
+
+## Analytical Validation
+
+- Document the rules used to calculate RFM (recency, frequency, and monetary value) scores.
+- Validate cohort definitions and ensure customer activity is assigned to the correct time period.
+- Check that revenue, retention, and segment summaries reconcile with the underlying records.
+- Treat segments as analytical groupings rather than fixed customer identities; review them as behaviour changes.
