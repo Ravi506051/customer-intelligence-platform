@@ -1,44 +1,31 @@
 # Customer Intelligence Platform
 
-Customer analytics workspace with RFM scoring, retention cohorts, and revenue insights.
+A Streamlit dashboard for exploring customer spend, order frequency, purchase recency, and simple customer segments.
 
-## Overview
-This repository contains an independently authored, reproducible Python application. It is designed as a portfolio-quality demonstration of a practical analytics or machine-learning workflow, with interactive exploration and downloadable results.
+## What it shows
 
-## Features
-- Interactive Streamlit interface
-- Reproducible demo data so the project runs immediately
-- Data exploration, modelling or KPI analysis relevant to the project
-- Charts and tabular results
-- CSV export where applicable
+- Starts with deterministic synthetic sample data (1,200 records, seed 42) or accepts a customer CSV.
+- Calculates average order value and divides customers into spend-based quartiles.
+- Shows customer count, total spend, and customers with more than 180 days since purchase.
+- Compares spend by segment and recency by region.
+- Exports the enriched customer table as CSV.
 
-## Tech stack
-Python, Streamlit, Pandas, NumPy, scikit-learn, Plotly.
+## Input data
+
+For an uploaded CSV, provide numeric `spend`, `orders`, and `recency_days` columns plus a `region` column. The app derives average order value and spend quartile labels. The segment labels are exploratory spend groups; they are not a full RFM model.
 
 ## Run locally
+
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
-# macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Data and reproducibility
-The default dataset is synthetic and generated in code with a fixed random seed. It is intended for demonstration and testing, not as a substitute for validated real-world data. Where applicable, upload a CSV through the app to explore your own dataset.
+## Scope
 
-## Responsible use
-Outputs are educational and should not be treated as professional, medical, financial, credit, or hiring decisions. Validate data quality, model performance, fairness, privacy, and domain requirements before any real-world use.
+The built-in dataset is synthetic. Uploaded data is summarized in the app session and exported by the user; review the data before sharing the CSV. This dashboard is an analytics demo, not a customer-level decision system.
 
-## Originality and attribution
-The implementation in this repository is newly authored for this portfolio and is not a wholesale copy of another GitHub repository. Public open-source project directories and topic pages were consulted for project discovery and inspiration; no third-party source code is being represented as original work.
+## Maintainer
 
-## License
-No license has been added yet. Add a license before redistributing this repository.
-
-## Analytical Validation
-
-- Document the rules used to calculate RFM (recency, frequency, and monetary value) scores.
-- Validate cohort definitions and ensure customer activity is assigned to the correct time period.
-- Check that revenue, retention, and segment summaries reconcile with the underlying records.
-- Treat segments as analytical groupings rather than fixed customer identities; review them as behaviour changes.
+Ravi Kumar Rao · [GitHub](https://github.com/Ravi506051)
